@@ -1,0 +1,54 @@
+<Project>
+	<Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="Assets\**" />
+		<Compile Remove="Docs\**" />
+		<Compile Remove="Libraries\**" />
+		<Compile Remove="NewFolder\**" />
+		<EmbeddedResource Remove="Libraries\**" />
+		<EmbeddedResource Remove="NewFolder\**" />
+		<None Remove="Docs\**" />
+		<None Remove="Libraries\**" />
+		<None Remove="NewFolder\**" />
+		<!-- REMOVED: <None Remove="Assets\**" /> -->
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove=".gitignore" />
+		<None Remove="LICENSE.md" />
+		<None Remove="README.md" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Assets\Ludvig_Moulin_-_Kitten_on_a_Journey_of_Discovery__Royalty_Free_Music_.mp3">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\click.wav">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\jump.wav">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\hitHurt.wav">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\pickupCoin.wav">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\sword-sound-260274.mp3">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\laserShoot.wav">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>
